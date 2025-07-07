@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ride_koraput/extension/box_extension.dart';
+import 'package:ride_koraput/widgets/profile_pic.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -54,33 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        actions: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey, // Optional background color
-            ),
-            clipBehavior: Clip.hardEdge,
-            child: ClipRect(
-              child: Align(
-                alignment: Alignment.center,
-                widthFactor: 1.0,
-                heightFactor: 1.0,
-                child: Image.asset(
-                  'assets/profile.jpg',
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-            ),
-          ),
-
-          10.wBox,
-        ],
+        actions: [ProfilePic(), 10.wBox],
       ),
       body: SingleChildScrollView(
         child: Padding(

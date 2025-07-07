@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ride_koraput/screens/dummy_screen.dart';
 import 'package:ride_koraput/screens/home_screen.dart';
 
 void main() {
@@ -10,6 +11,12 @@ class App extends StatelessWidget {
 
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
+    return MaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
+      home: DummyScreen(),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ride_koraput/screens/call_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -16,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
-  final widgetList = [ProfilePage(), Container(), Container()];
+  final widgetList = [ProfilePage(), CallScreen(), Container()];
 
   @override
   Widget build(BuildContext context) {

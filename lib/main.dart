@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ride_koraput/screens/dummy_screen.dart';
 import 'package:ride_koraput/screens/home_screen.dart';
-import 'package:ride_koraput/screens/profile_screen.dart';
+import 'package:ride_koraput/screens/bot_nav/profile_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]);
   return runApp(App());
 }
 

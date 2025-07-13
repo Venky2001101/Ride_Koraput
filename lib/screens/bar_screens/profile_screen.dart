@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ride_koraput/screens/bot_nav/call_screen.dart';
-import 'package:ride_koraput/screens/bot_nav/edit_screen.dart';
+import 'package:ride_koraput/screens/bar_screens/call_screen.dart';
+import 'package:ride_koraput/screens/bar_screens/edit_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ride_koraput/screens/dummy_screen.dart';
 import 'package:ride_koraput/screens/home_screen.dart';
-import 'package:ride_koraput/screens/bot_nav/profile_screen.dart';
+import 'package:ride_koraput/screens/bar_screens/profile_screen.dart';
+import 'package:ride_koraput/screens/input/form_input_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
       // darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: ProfileScreen(),
+      home: FormInputScreen(),
     );
   }
 }

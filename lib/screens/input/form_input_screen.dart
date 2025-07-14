@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ride_koraput/extension/box_extension.dart';
@@ -22,6 +21,9 @@ class _FormInputScreenState extends State<FormInputScreen> {
     "'" // <-- ' is added to the expression
     ']',
   );
+
+  List<String> genders = ["Male", "Female", "Other"];
+  String? selectedItems;
 
   String input2 = "";
   TextEditingController lastNameTextEditingController = TextEditingController();
@@ -155,29 +157,31 @@ class _FormInputScreenState extends State<FormInputScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-                TextFormField(
-                  validator: (value) {
-                    // bool isValidEmail(String email) {}
-                    if (value == null || value.isEmpty) {
-                      return "This field can't be empty";
-                    }
-                    if (!value.contains(emailRegex)) {
-                      return "Incorrect email Address";
-                    }
-                  },
-                  controller: mailTextEditingController,
-                  onChanged: (value) {
-                    debugPrint(value);
-                  },
-                  keyboardType: TextInputType.emailAddress,
+                DropdownButtonFormField(
+                  value: selectedItems,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.mail),
-                    prefixIconColor: Colors.lightBlueAccent,
-                    label: Text("Mail Id"),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                    constraints: BoxConstraints(maxWidth: context.width * 0.8),
                   ),
+                  selectedItemBuilder: (context) {
+                    return genders
+                        .map(
+                          (value) => Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Text(value),
+                          ),
+                        )
+                        .toList();
+                  },
+                  items:
+                      genders.map((value) {
+                        return DropdownMenuItem(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                  onChanged: (value) {
+                    selectedItems = value;
+                  },
                 ),
                 SizedBox(height: 10),
                 TextFormField(
